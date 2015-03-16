@@ -1,3 +1,7 @@
+Maxim maxim; 
+AudioPlayer backgroundmusic; 
+
+
 boolean shake;
 
 character character1;
@@ -18,12 +22,18 @@ void setup()
   }
 
   character1 = new character("Elsa");
-  
+
+  maxim = new Maxim(this);
+
+
+  backgroundmusic = maxim.loadFile("justyce22-70-bpm-ethnic-victory.wav"); //music from http://www.looperman.com/loops/detail/82039
 }
 
 void draw()
 {
   restrictwindow();
+
+  backgroundmusic.play();
 
   if (shake)
   {
@@ -84,8 +94,8 @@ class character
 void keyPressed()
 {
   //if s key is pressed shake function will turn on/off
-  if(key == 's')
-  shake = !shake;
+  if (key == 's')
+    shake = !shake;
 }
 
 void mouseClicked()
@@ -96,7 +106,7 @@ void mouseClicked()
   index++;
   if (index >= lines.length )
     index=0;
-    
-    text = lines[index];
+
+  text = lines[index];
 }
 
