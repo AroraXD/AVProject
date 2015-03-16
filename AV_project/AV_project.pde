@@ -196,7 +196,7 @@ void mouseClicked()
 
 void effects()
 {
-  if (index == 5)
+  if (index == 6)
     shake = true;
   else
     shake = false;
