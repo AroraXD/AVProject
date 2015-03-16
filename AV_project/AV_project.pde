@@ -4,6 +4,8 @@ character character1;
 
 String text = "text goes here";
 
+int index = 0;
+
 void setup()
 {
   size(900, 600, P2D);
@@ -81,8 +83,20 @@ class character
 
 void keyPressed()
 {
-  //if space bar is pressed shake function will turn on/off
-  if(key == ' ')
+  //if s key is pressed shake function will turn on/off
+  if(key == 's')
   shake = !shake;
+}
+
+void mouseClicked()
+{
+
+  String lines[] = loadStrings("data.txt");
+
+  index++;
+  if (index >= lines.length )
+    index=0;
+    
+    text = lines[index];
 }
 
