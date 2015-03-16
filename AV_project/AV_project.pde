@@ -1,6 +1,8 @@
 Maxim maxim; 
 AudioPlayer backgroundmusic; 
 
+PFont font1;
+
 boolean shake;
 
 character character1;
@@ -30,6 +32,8 @@ void setup()
   {
     frame.setResizable(true);
   }
+  
+  font1 = loadFont("Fonts/Playtime.vlw");
 
   character1 = new character("Sapphire");
 
@@ -44,6 +48,8 @@ void setup()
   v2 = new PVector(width, 0);
   v3 = new PVector(width, height);
   v4 = new PVector(0, height);
+  
+  textFont(font1, 32);
 }
 
 void draw()
