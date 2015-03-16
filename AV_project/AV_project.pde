@@ -10,6 +10,8 @@ String text = "text goes here";
 
 int index = 0;
 
+PImage background1;
+
 void setup()
 {
   size(900, 600, P2D);
@@ -22,9 +24,11 @@ void setup()
   }
 
   character1 = new character("Elsa");
+  
+  background1 = loadImage("Goldsmiths_Main_Building.jpg");
+  background1.resize(width,height);
 
   maxim = new Maxim(this);
-
 
   backgroundmusic = maxim.loadFile("justyce22-70-bpm-ethnic-victory.wav"); //music from http://www.looperman.com/loops/detail/82039
 }
@@ -42,7 +46,7 @@ void draw()
 
   pushMatrix();
 
-  background(100);
+  background(background1);
 
   // image(elsa, width*0.8, height - elsa.height/2);
   character1.update();
