@@ -31,7 +31,7 @@ void setup()
     frame.setResizable(true);
   }
 
-  character1 = new character("Elsa");
+  character1 = new character("Sapphire");
 
   background1 = loadImage("Goldsmiths_Main_Building.jpg");
   
