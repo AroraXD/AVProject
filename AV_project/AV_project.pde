@@ -56,7 +56,6 @@ void draw()
 
     background(background1);
 
-    // image(elsa, width*0.8, height - elsa.height/2);
     character1.update();
 
     popMatrix();
@@ -146,7 +145,6 @@ void keyPressed()
 
 void mouseClicked()
 {
-
   if (play)
   {
     String lines[] = loadStrings("data.txt");
