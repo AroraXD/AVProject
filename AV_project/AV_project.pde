@@ -18,7 +18,7 @@ void setup()
   }
 
   character1 = new character("Elsa");
-  ;
+  
 }
 
 void draw()
