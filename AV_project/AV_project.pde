@@ -58,11 +58,22 @@ void draw()
 
 void textbox()
 {
-  fill(255, 100, 200, 150);
+  pushStyle();
+  fill(0, 100);
   rect(width*0.5, height*0.85, width*0.9, height*0.2);
-
-  fill(250);
+  popStyle();
+  
+  pushStyle();
+  fill(255);
   text(text, width*0.1, height*0.8);
+  popStyle();
+  
+  if(mouseX < (width-width*0.9)/2 && mouseX > width-((width-width*0.9)/2))
+  {
+    pushStyle();
+    fill(0, 100);
+    popStyle();
+  }
 }
 
 void restrictwindow()
