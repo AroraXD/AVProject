@@ -11,11 +11,9 @@ int index = 0;
 
 PImage background1;
 
-<<<<<<< HEAD
 PVector v1, v2, v3, v4;
-=======
+
 boolean play = false;
->>>>>>> origin/master
 
 void setup()
 {
@@ -24,13 +22,10 @@ void setup()
   imageMode(CENTER);
   textureMode(NORMAL);
   noStroke();
-<<<<<<< HEAD
   smooth();
   
-=======
   textAlign(CENTER, CENTER);
 
->>>>>>> origin/master
   if (frame  !=null)
   {
     frame.setResizable(true);
@@ -39,11 +34,8 @@ void setup()
   character1 = new character("Elsa");
 
   background1 = loadImage("Goldsmiths_Main_Building.jpg");
-<<<<<<< HEAD
-=======
+  
   background1.resize(width, height);
->>>>>>> origin/master
-
   maxim = new Maxim(this);
 
   backgroundmusic = maxim.loadFile("justyce22-70-bpm-ethnic-victory.wav"); //music from http://www.looperman.com/loops/detail/82039
@@ -65,7 +57,6 @@ void draw()
 
     backgroundmusic.play();
 
-<<<<<<< HEAD
   if (shake)
   {
     translate(random(5), random(5));
@@ -78,20 +69,21 @@ void draw()
   vertex(v3.x, v3.y, 1, 1);
   vertex(v4.x, v4.y, 0, 1);
   endShape(CLOSE);
-=======
+  
     if (shake)
     {
       translate(random(5), random(5));
     }
->>>>>>> origin/master
 
     pushMatrix();
 
-<<<<<<< HEAD
   // image(elsa, width*0.8, height - elsa.height/2);
   character1.update();
 
-  popMatrix();
+    popMatrix();
+
+    textbox();
+  }
   
   v1.x = 0;
   v1.y = 0;
@@ -101,16 +93,6 @@ void draw()
   v3.y = height;
   v4.x = 0;
   v4.y = height;
-=======
-    background(background1);
-
-    character1.update();
-
-    popMatrix();
->>>>>>> origin/master
-
-    textbox();
-  }
 }
 
 void menu()
