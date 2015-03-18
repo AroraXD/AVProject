@@ -62,7 +62,6 @@ void draw()
     restrictwindow();
 
     backgroundmusic.play();
-    effects();
     if (shake)
     {
       translate(random(5), random(5));
@@ -87,7 +86,12 @@ void draw()
     character1.update();
 
     popMatrix();
+    effects();
 
+    if (shake)
+    {
+      translate(random(2), random(2));
+    }
     textbox();
   }
 
@@ -183,13 +187,7 @@ void keyPressed()
   {
     if (key == ' ')
     {
-      String lines[] = loadStrings("data.txt");
-
-      index++;
-      if (index >= lines.length )
-        index=0;
-
-      text = lines[index];
+      updatetext();
     }
   }
 }
@@ -198,13 +196,7 @@ void mouseClicked()
 {
   if (play)
   {
-    String lines[] = loadStrings("data.txt");
-
-    index++;
-    if (index >= lines.length )
-      index=0;
-
-    text = lines[index];
+    updatetext();
   }
 }
 
@@ -213,16 +205,27 @@ void effects()
   if (text.equals("SHAKE") == true)
   {
     shake = true;
-    //index++;
+    updatetext();
   }
   if (text.equals("STOPSHAKE") == true)
   {
     shake = false;
-    //index++;
+    updatetext();
   }
 }
 
 void processing()
 {
+}
+
+void updatetext()
+{
+  index++;
+  String lines[] = loadStrings("data.txt");
+
+  if (index >= lines.length )
+    index=0;
+
+  text = lines[index];
 }
 
