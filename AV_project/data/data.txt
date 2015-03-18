@@ -1,12 +1,38 @@
 
-Heya i’m Sapphire. Click your mouse on the game window to advance the text.
-Good Job.
+Heya i’m Sapphire. Click your mouse or press the spacebar to advance the text.
+Good Job. you’ve got the hang of this already.
+If you want to go back and read previous text, close and restart the program. 
+Also you can resize the window of this program to fit your computer screen better. Try it now.
+So about me…
 Im a first year computing student. 
 stuff
 and more stuff
 SHAKE
-LOUD NOISES
+*beep beep*
 STOPSHAKE
-and words
+whoops, that was my phone
+looks like I’m late for my lab.
+…
+change background here to lab. also change music.
+…
+looks like i made it just in time.
+let me just log onto the intranet to sign the register. 
+cool, all done.
+now lets see what we have to do today
+looks like we have to make our own filters
+sounds… interesting. 
+let me just open up processing
+OPENPROCESSING
+cool. what sort of filter should i make?
+if we ever add options in our game they would go here.
+…
+processing stuff will go here.
+…
+CLOSEPROCESSING
+well that was fun. 
+but wait theres more
+time for a lecture
+woo
+we have a really neat lecturer. I can’t wait for you to meet him. 
 …
 the end

@@ -16,6 +16,7 @@ PImage background1;
 PVector v1, v2, v3, v4;
 
 boolean play = false;
+boolean processing = false;
 
 void setup()
 {
@@ -60,7 +61,7 @@ void draw()
   } else
   {
     restrictwindow();
-
+    effects();
     backgroundmusic.play();
     if (shake)
     {
@@ -86,11 +87,15 @@ void draw()
     character1.update();
 
     popMatrix();
-    effects();
 
     if (shake)
     {
       translate(random(2), random(2));
+    }
+
+    if (processing)
+    {
+      processingwindow();
     }
     textbox();
   }
@@ -212,10 +217,28 @@ void effects()
     shake = false;
     updatetext();
   }
+   if (text.equals("OPENPROCESSING") == true)
+  {
+    processing = true;
+    updatetext();
+  }
+  if (text.equals("CLOSEPROCESSING") == true)
+  {
+    processing = false;
+    updatetext();
+  }
+  
 }
 
-void processing()
+void processingwindow()
 {
+  fill(0, 80);// draws the shadow of the processing window
+  rect(width*0.3+width*0.005+height*0.005, height*0.4+width*0.01+height*0.005, width*0.5, height*0.5, 10);
+
+  fill(0);//draws the main window part of the processing window
+  rect(width*0.3, height*0.4, width*0.5, height*0.5, 0, 0, 5, 5);
+  fill(215);//draws the window title bar
+  rect(width*0.3, height*0.14, width*0.5, height*0.02, 5, 5, 0, 0);
 }
 
 void updatetext()
