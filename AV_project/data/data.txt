@@ -1,14 +1,16 @@
 
 Heya i’m Sapphire. Click your mouse or press the spacebar to advance the text.
 Good Job. you’ve got the hang of this already.
-If you want to go back and read previous text, close and restart the program. 
+If you want to go back and read previous text, close and restart the program. Or finish the game and press “PLAY”again in the menu.
 Also you can resize the window of this program to fit your computer screen better. Try it now.
 So about me…
 Im a first year computing student. 
 stuff
 and more stuff
 SHAKE
-*beep beep*
+RINGTONESTART
+*beep beep tuturuu*
+RINGTONESTOP
 STOPSHAKE
 whoops, that was my phone
 looks like I’m late for my lab.

@@ -1,5 +1,6 @@
 Maxim maxim; 
 AudioPlayer backgroundmusic; 
+AudioPlayer ringtone; 
 
 PFont font1;
 
@@ -41,9 +42,12 @@ void setup()
   background1 = loadImage("Goldsmiths_Main_Building.jpg");
 
   background1.resize(width, height);
+
   maxim = new Maxim(this);
 
   backgroundmusic = maxim.loadFile("justyce22-70-bpm-ethnic-victory.wav"); //music from http://www.looperman.com/loops/detail/82039
+  ringtone = maxim.loadFile("New Tuturu.wav"); //sound effect from https://youtu.be/nuLeIpTGui0
+
 
   v1 = new PVector(0, 0);
   v2 = new PVector(width, 0);
@@ -118,9 +122,9 @@ void menu()
   rect(width/2, height*0.5, width*0.3, height*0.1);
   fill(0);
   textSize(40); 
-  fill(50,200);
-  text("play", width/2, height*0.5);
-  fill(50,200);
+  fill(50, 200);
+  text("PLAY", width/2, height*0.5);
+  fill(50, 200);
   text("Audio Visual Adventures", width/2, height*0.1);
 
   if (mouseX >width*0.5-width*0.15 && mouseX < width*0.5+width*0.15)
@@ -143,7 +147,7 @@ void textbox()
   fill(255);
   textSize((width+height/2)*0.015); 
   //text(text, width*0.5, height*0.8);// old textbox, does not wrap text.
-  text(text, width*0.5, height*0.85,width*0.9,height*02);
+  text(text, width*0.5, height*0.85, width*0.9, height*02);
 
   popStyle();
 
@@ -228,6 +232,19 @@ void effects()
   if (text.equals("CLOSEPROCESSING") == true)
   {
     processing = false;
+    updatetext();
+  }
+
+  if (text.equals("RINGTONESTART") == true)
+  {
+    ringtone.play();
+    backgroundmusic.volume(0.3);
+    updatetext();
+  }
+  if (text.equals("RINGTONESTOP") == true)
+  {
+    ringtone.stop();
+    backgroundmusic.volume(1);
     updatetext();
   }
 }
