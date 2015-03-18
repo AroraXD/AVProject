@@ -10,18 +10,22 @@ character character1;
 
 String text = "text goes here";
 
-int index = 0;
+int index = 0;//controls which line of text the game reads.
 
-PImage background1;
-
+PImage currentbackground;
+PImage thegreensBG;
+PImage labsBG;
 PVector v1, v2, v3, v4;
 
 boolean play = false;
 boolean processing = false;
+boolean showboids = false;
+
+Boid allBoids[]; //creates an array to store the boids
 
 void setup()
 {
-  size(900, 600, P2D);
+  size(900, 600, P3D);
   rectMode(CENTER);
   imageMode(CENTER);
   textureMode(NORMAL);
@@ -39,9 +43,13 @@ void setup()
 
   character1 = new character("Sapphire");
 
-  background1 = loadImage("Goldsmiths_Main_Building.jpg");
+  thegreensBG = loadImage("Goldsmiths_Main_Building.jpg");
+  labsBG = loadImage("hacksmithsimage.jpg"); // filler image, need to be replaced
 
-  background1.resize(width, height);
+  thegreensBG.resize(width, height);
+  labsBG.resize(width, height);
+
+  currentbackground = thegreensBG;
 
   maxim = new Maxim(this);
 
@@ -54,7 +62,9 @@ void setup()
   v3 = new PVector(width, height);
   v4 = new PVector(0, height);
 
-  textFont(font1, 32);
+  textFont(font1);
+
+  allBoids = new Boid[20];// fills the allboids array with boids
 }
 
 void draw()
@@ -71,9 +81,9 @@ void draw()
     {
       translate(random(5), random(5));
     }
-
+    noStroke();
     beginShape();
-    texture(background1);
+    texture(currentbackground);
     vertex(v1.x, v1.y, 0, 0);
     vertex(v2.x, v2.y, 1, 0);
     vertex(v3.x, v3.y, 1, 1);
@@ -100,7 +110,14 @@ void draw()
     if (processing)
     {
       processingwindow();
+
+      if (showboids)
+      {
+        drawboids();
+      }
     }
+
+
     textbox();
   }
 
@@ -138,6 +155,8 @@ void menu()
 }
 void textbox()
 {
+  noStroke();
+  
   pushStyle();
   fill(0, 100);
   rect(width*0.5, height*0.85, width*0.9, height*0.2);
@@ -146,9 +165,7 @@ void textbox()
   pushStyle();
   fill(255);
   textSize((width+height/2)*0.015); 
-  //text(text, width*0.5, height*0.8);// old textbox, does not wrap text.
   text(text, width*0.5, height*0.85, width*0.9, height*02);
-
   popStyle();
 
   if (mouseX < (width-width*0.9)/2 && mouseX > width-((width-width*0.9)/2))
@@ -212,43 +229,6 @@ void mouseClicked()
   }
 }
 
-void effects()
-{
-  if (text.equals("SHAKE") == true)
-  {
-    shake = true;
-    updatetext();
-  }
-  if (text.equals("STOPSHAKE") == true)
-  {
-    shake = false;
-    updatetext();
-  }
-  if (text.equals("OPENPROCESSING") == true)
-  {
-    processing = true;
-    updatetext();
-  }
-  if (text.equals("CLOSEPROCESSING") == true)
-  {
-    processing = false;
-    updatetext();
-  }
-
-  if (text.equals("RINGTONESTART") == true)
-  {
-    ringtone.play();
-    backgroundmusic.volume(0.3);
-    updatetext();
-  }
-  if (text.equals("RINGTONESTOP") == true)
-  {
-    ringtone.stop();
-    backgroundmusic.volume(1);
-    updatetext();
-  }
-}
-
 void processingwindow()
 {
   fill(0, 80);// draws the shadow of the processing window
@@ -276,5 +256,17 @@ void updatetext()
   }
 
   text = lines[index];
+}
+
+void drawboids()
+{
+  PVector centrePoint = null;
+  if (mouseX > width*0.05 && mouseX < width*0.55 && mouseY > height*0.15 && mouseY < height*0.65)
+    centrePoint = new PVector(mouseX, mouseY); 
+  // draw all the boids
+  for (int i = 0; i < allBoids.length; i++)
+  {
+    allBoids[i].draw(centrePoint);
+  }
 }
 

@@ -1,4 +1,5 @@
 
+BG_GREENS
 Heya i’m Sapphire. Click your mouse or press the spacebar to advance the text.
 Good Job. you’ve got the hang of this already.
 If you want to go back and read previous text, close and restart the program. Or finish the game and press “PLAY”again in the menu.
@@ -15,6 +16,7 @@ STOPSHAKE
 whoops, that was my phone
 looks like I’m late for my lab.
 …
+BG_LABS
 change background here to lab. also change music.
 …
 looks like i made it just in time.
@@ -28,7 +30,14 @@ OPENPROCESSING
 cool. what sort of filter should i make?
 if we ever add options in our game they would go here.
 …
-processing stuff will go here.
+fun stuff, now to work on flocking
+…
+STARTBOIDS
+that should do it
+move your mouse over the processing sketch window to make the boids move towards it. 
+well thats flocking done.
+STOPBOIDS
+more processing stuff will go here.
 …
 CLOSEPROCESSING
 well that was fun. 
