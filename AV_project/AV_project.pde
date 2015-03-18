@@ -112,15 +112,16 @@ void draw()
 
 void menu()
 {
-  background(20, 60, 70);
+  background(#D3CA0B);
 
   fill(255, 200);
   rect(width/2, height*0.5, width*0.3, height*0.1);
   fill(0);
-  textSize(30); 
+  textSize(40); 
+  fill(50,200);
   text("play", width/2, height*0.5);
-  fill(255);
-  text("name of the game or something", width/2, height*0.1);
+  fill(50,200);
+  text("Audio Visual Adventures", width/2, height*0.1);
 
   if (mouseX >width*0.5-width*0.15 && mouseX < width*0.5+width*0.15)
   {
@@ -140,8 +141,10 @@ void textbox()
 
   pushStyle();
   fill(255);
-  textSize(20); 
-  text(text, width*0.5, height*0.8);
+  textSize((width+height/2)*0.015); 
+  //text(text, width*0.5, height*0.8);// old textbox, does not wrap text.
+  text(text, width*0.5, height*0.85,width*0.9,height*02);
+
   popStyle();
 
   if (mouseX < (width-width*0.9)/2 && mouseX > width-((width-width*0.9)/2))
@@ -217,7 +220,7 @@ void effects()
     shake = false;
     updatetext();
   }
-   if (text.equals("OPENPROCESSING") == true)
+  if (text.equals("OPENPROCESSING") == true)
   {
     processing = true;
     updatetext();
@@ -227,7 +230,6 @@ void effects()
     processing = false;
     updatetext();
   }
-  
 }
 
 void processingwindow()
@@ -239,6 +241,10 @@ void processingwindow()
   rect(width*0.3, height*0.4, width*0.5, height*0.5, 0, 0, 5, 5);
   fill(215);//draws the window title bar
   rect(width*0.3, height*0.14, width*0.5, height*0.02, 5, 5, 0, 0);
+
+  fill(10);//draws the text on the title bar
+  textSize(height*0.02);
+  text("AV_Project", width*0.3, height*0.14);
 }
 
 void updatetext()
@@ -247,7 +253,10 @@ void updatetext()
   String lines[] = loadStrings("data.txt");
 
   if (index >= lines.length )
+  {
     index=0;
+    play = false;
+  }
 
   text = lines[index];
 }
