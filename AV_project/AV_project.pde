@@ -178,6 +178,20 @@ void keyPressed()
   //if s key is pressed shake function will turn on/off
   if (key == 's')
     shake = !shake;
+
+  if (play)
+  {
+    if (key == ' ')
+    {
+      String lines[] = loadStrings("data.txt");
+
+      index++;
+      if (index >= lines.length )
+        index=0;
+
+      text = lines[index];
+    }
+  }
 }
 
 void mouseClicked()
@@ -199,12 +213,12 @@ void effects()
   if (text.equals("SHAKE") == true)
   {
     shake = true;
-    index++;
+    //index++;
   }
   if (text.equals("STOPSHAKE") == true)
   {
     shake = false;
-    index++;
+    //index++;
   }
 }
 
