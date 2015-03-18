@@ -32,7 +32,7 @@ void setup()
   {
     frame.setResizable(true);
   }
-  
+
   font1 = loadFont("Fonts/Playtime.vlw");
 
   character1 = new character("Sapphire");
@@ -48,7 +48,7 @@ void setup()
   v2 = new PVector(width, 0);
   v3 = new PVector(width, height);
   v4 = new PVector(0, height);
-  
+
   textFont(font1, 32);
 }
 
@@ -196,9 +196,19 @@ void mouseClicked()
 
 void effects()
 {
-  if (index == 6)
+  if (text.equals("SHAKE") == true)
+  {
     shake = true;
-  else
+    index++;
+  }
+  if (text.equals("STOPSHAKE") == true)
+  {
     shake = false;
+    index++;
+  }
+}
+
+void processing()
+{
 }
 
