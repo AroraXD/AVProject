@@ -57,7 +57,8 @@ void setup()
 
   backgroundmusic = maxim.loadFile("justyce22-70-bpm-ethnic-victory.wav"); //music from http://www.looperman.com/loops/detail/82039
   ringtone = maxim.loadFile("New Tuturu.wav"); //sound effect from https://youtu.be/nuLeIpTGui0
-
+  labmusic = maxim.loadFile("maxjc-sparkling-keys-loop.wav"); //sound effect http://www.looperman.com/loops/detail/46566
+  labsounds = maxim.loadFile("labsoundsfaded.wav"); //sound effect recodeded in room 306
   v1 = new PVector(0, 0);
   v2 = new PVector(width, 0);
   v3 = new PVector(width, height);
@@ -157,7 +158,7 @@ void menu()
 void textbox()
 {
   noStroke();
-  
+
   pushStyle();
   fill(0, 100);
   rect(width*0.5, height*0.85, width*0.9, height*0.2);
