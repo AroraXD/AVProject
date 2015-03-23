@@ -45,8 +45,8 @@ void setup()
 
   character1 = new character("Sapphire");
 
-  thegreensBG = loadImage("Goldsmiths_Main_Building.jpg");
-  labsBG = loadImage("labimage.jpg"); // filler image, need to be replaced
+  thegreensBG = loadImage("Backgrounds/Goldsmiths_Main_Building.jpg");
+  labsBG = loadImage("Backgrounds/labimage.jpg"); // filler image, need to be replaced
 
   thegreensBG.resize(width, height);
   labsBG.resize(width, height);
@@ -55,10 +55,10 @@ void setup()
 
   maxim = new Maxim(this);
 
-  backgroundmusic = maxim.loadFile("justyce22-70-bpm-ethnic-victory.wav"); //music from http://www.looperman.com/loops/detail/82039
-  ringtone = maxim.loadFile("New Tuturu.wav"); //sound effect from https://youtu.be/nuLeIpTGui0
-  labmusic = maxim.loadFile("maxjc-sparkling-keys-loop.wav"); //sound effect http://www.looperman.com/loops/detail/46566
-  labsounds = maxim.loadFile("labsoundsfaded.wav"); //sound effect recodeded in room 306
+  backgroundmusic = maxim.loadFile("Audio/justyce22-70-bpm-ethnic-victory.wav"); //music from http://www.looperman.com/loops/detail/82039
+  ringtone = maxim.loadFile("Audio/New Tuturu.wav"); //sound effect from https://youtu.be/nuLeIpTGui0
+  labmusic = maxim.loadFile("Audio/maxjc-sparkling-keys-loop.wav"); //sound effect http://www.looperman.com/loops/detail/46566
+  labsounds = maxim.loadFile("Audio/labsoundsfaded.wav"); //sound effect recodeded in room 306
   v1 = new PVector(0, 0);
   v2 = new PVector(width, 0);
   v3 = new PVector(width, height);
@@ -198,7 +198,7 @@ class character
   character(String n )
   {
     name = n;
-    sprite1 = loadImage(name+".png");
+    sprite1 = loadImage("Characters/"+name+".png");
     sprite1.resize(0, int(height*0.8));
   }
 
