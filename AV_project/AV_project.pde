@@ -56,7 +56,6 @@ void setup()
   backgroundmusic = maxim.loadFile("justyce22-70-bpm-ethnic-victory.wav"); //music from http://www.looperman.com/loops/detail/82039
   ringtone = maxim.loadFile("New Tuturu.wav"); //sound effect from https://youtu.be/nuLeIpTGui0
 
-
   v1 = new PVector(0, 0);
   v2 = new PVector(width, 0);
   v3 = new PVector(width, height);
