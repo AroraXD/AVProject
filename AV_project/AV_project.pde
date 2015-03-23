@@ -1,6 +1,8 @@
 Maxim maxim; 
 AudioPlayer backgroundmusic; 
 AudioPlayer ringtone; 
+AudioPlayer labmusic;
+AudioPlayer labsounds;
 
 PFont font1;
 
