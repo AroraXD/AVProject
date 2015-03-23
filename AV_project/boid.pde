@@ -14,12 +14,12 @@ class Boid
    // bounce off the edges of the screen
    boolean walls()
    {
-      if(Pos.x < width*0.05 || Pos.x > width*0.55)
+      if(Pos.x <= width*0.05 || Pos.x >= width*0.55)
       {
          Vel.x = - Vel.x;
          return true;
       }
-      if(Pos.y < height*0.15 || Pos.y > height*0.65)
+      if(Pos.y <= height*0.15 || Pos.y >= height*0.65)
       {
          Vel.y = - Vel.y;
          return true;

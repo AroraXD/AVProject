@@ -44,7 +44,7 @@ void setup()
   character1 = new character("Sapphire");
 
   thegreensBG = loadImage("Goldsmiths_Main_Building.jpg");
-  labsBG = loadImage("hacksmithsimage.jpg"); // filler image, need to be replaced
+  labsBG = loadImage("labimage.jpg"); // filler image, need to be replaced
 
   thegreensBG.resize(width, height);
   labsBG.resize(width, height);
