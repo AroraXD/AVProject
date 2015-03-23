@@ -1,5 +1,6 @@
 
 BG_GREENS
+BGmusicStart
 Heya i’m Sapphire. Click your mouse or press the spacebar to advance the text.
 Good Job. you’ve got the hang of this already.
 If you want to go back and read previous text, close and restart the program. Or finish the game and press “PLAY”again in the menu.
@@ -16,8 +17,11 @@ STOPSHAKE
 whoops, that was my phone
 looks like I’m late for my lab.
 …
+BGmusicStop
 BG_LABS
-change background here to lab. also change music.
+BGlabsStart
+LabSoundStart
+
 …
 looks like i made it just in time.
 let me just log onto the intranet to sign the register. 
@@ -43,7 +47,12 @@ CLOSEPROCESSING
 well that was fun. 
 but wait theres more
 time for a lecture
+LabSoundStop
 woo
-we have a really neat lecturer. I can’t wait for you to meet him. 
+we have a really neat lecturer. I can’t wait for you to meet him.
+BGlabsStop
+lecture hall stuff, background, music etc
+lecture stuff - idk we could put in lecture slides or something.
+end of day - societies?
 …
 .:THE END:. Click to return to the menu.

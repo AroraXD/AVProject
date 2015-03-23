@@ -1,5 +1,36 @@
+
 void effects()
 {
+  if (text.equals("BGmusicStart") == true)
+  {
+    backgroundmusic.play();
+    updatetext();
+  }
+  if (text.equals("BGmusicStop") == true)
+  {
+    backgroundmusic.stop();
+    updatetext();
+  }
+    if (text.equals("BGlabsStart") == true)
+  {
+    labmusic.play();
+    updatetext();
+  }
+  if (text.equals("BGlabsStop") == true)
+  {
+    labmusic.stop();
+    updatetext();
+  }
+    if (text.equals("LabSoundStart") == true)
+  {
+    labsounds.play();
+    updatetext();
+  }
+  if (text.equals("LabSoundStop") == true)
+  {
+    labsounds.stop();
+    updatetext();
+  }
   if (text.equals("BG_GREENS") == true)
   {
     currentbackground = thegreensBG;    

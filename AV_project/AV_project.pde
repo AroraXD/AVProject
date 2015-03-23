@@ -59,6 +59,7 @@ void setup()
   ringtone = maxim.loadFile("New Tuturu.wav"); //sound effect from https://youtu.be/nuLeIpTGui0
   labmusic = maxim.loadFile("maxjc-sparkling-keys-loop.wav"); //sound effect http://www.looperman.com/loops/detail/46566
   labsounds = maxim.loadFile("labsoundsfaded.wav"); //sound effect recodeded in room 306
+  labsounds.volume(0.6);
   v1 = new PVector(0, 0);
   v2 = new PVector(width, 0);
   v3 = new PVector(width, height);
@@ -78,7 +79,6 @@ void draw()
   {
     restrictwindow();
     effects();
-    backgroundmusic.play();
     if (shake)
     {
       translate(random(5), random(5));
