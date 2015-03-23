@@ -55,18 +55,11 @@ void setup()
 
   maxim = new Maxim(this);
 
-<<<<<<< HEAD
-  backgroundmusic = maxim.loadFile("justyce22-70-bpm-ethnic-victory.wav"); //music from http://www.looperman.com/loops/detail/82039
-  ringtone = maxim.loadFile("New Tuturu.wav"); //sound effect from https://youtu.be/nuLeIpTGui0
-  labmusic = maxim.loadFile("maxjc-sparkling-keys-loop.wav"); //sound effect http://www.looperman.com/loops/detail/46566
-  labsounds = maxim.loadFile("labsoundsfaded.wav"); //sound effect recodeded in room 306
-  labsounds.volume(0.6);
-=======
   backgroundmusic = maxim.loadFile("Audio/justyce22-70-bpm-ethnic-victory.wav"); //music from http://www.looperman.com/loops/detail/82039
   ringtone = maxim.loadFile("Audio/New Tuturu.wav"); //sound effect from https://youtu.be/nuLeIpTGui0
   labmusic = maxim.loadFile("Audio/maxjc-sparkling-keys-loop.wav"); //sound effect http://www.looperman.com/loops/detail/46566
   labsounds = maxim.loadFile("Audio/labsoundsfaded.wav"); //sound effect recodeded in room 306
->>>>>>> origin/master
+  labsounds.volume(0.6);
   v1 = new PVector(0, 0);
   v2 = new PVector(width, 0);
   v3 = new PVector(width, height);
