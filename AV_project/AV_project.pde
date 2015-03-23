@@ -17,6 +17,7 @@ int index = 0;//controls which line of text the game reads.
 PImage currentbackground;
 PImage thegreensBG;
 PImage labsBG;
+PImage lectureBG;
 PVector v1, v2, v3, v4;
 
 boolean play = false;
@@ -46,10 +47,12 @@ void setup()
   character1 = new character("Sapphire");
 
   thegreensBG = loadImage("Backgrounds/Goldsmiths_Main_Building.jpg");
-  labsBG = loadImage("Backgrounds/labimage.jpg"); // filler image, need to be replaced
+  labsBG = loadImage("Backgrounds/labimage.jpg");
+  lectureBG = loadImage("Backgrounds/20150309_163721.jpg"); // filler image, need to be replaced
 
   thegreensBG.resize(width, height);
   labsBG.resize(width, height);
+  lectureBG.resize(width, height);
 
   currentbackground = thegreensBG;
 

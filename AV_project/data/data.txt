@@ -51,8 +51,11 @@ LabSoundStop
 woo
 we have a really neat lecturer. I can’t wait for you to meet him.
 BGlabsStop
+BG_LECTURE
+BGmusicStart
 lecture hall stuff, background, music etc
 lecture stuff - idk we could put in lecture slides or something.
+BGmusicStop
 end of day - societies?
 …
 .:THE END:. Click to return to the menu.

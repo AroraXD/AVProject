@@ -41,6 +41,11 @@ void effects()
     currentbackground = labsBG;    
     updatetext();
   }
+  if (text.equals("BG_LECTURE") == true)
+  {
+    currentbackground = lectureBG;    
+    updatetext();
+  }
   if (text.equals("SHAKE") == true)
   {
     shake = true;
