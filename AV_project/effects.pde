@@ -66,6 +66,16 @@ void effects()
     processing = false;
     updatetext();
   }
+  if (text.equals("FILTERSOFF") == true)
+  {
+    showfilters = false;
+    updatetext();
+  }
+  if (text.equals("FILTERSON") == true)
+  {
+    showfilters = true;
+    updatetext();
+  }
   if (text.equals("STARTBOIDS") == true)
   {
     for (int i = 0; i < allBoids.length; i++)
@@ -91,4 +101,3 @@ void effects()
     updatetext();
   }
 }
-

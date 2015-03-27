@@ -18,11 +18,14 @@ PImage currentbackground;
 PImage thegreensBG;
 PImage labsBG;
 PImage lectureBG;
+PImage filterimg;
 PVector v1, v2, v3, v4;
 
 boolean play = false;
 boolean processing = false;
+boolean showfilters = false;
 boolean showboids = false;
+
 
 Boid allBoids[]; //creates an array to store the boids
 
@@ -49,7 +52,7 @@ void setup()
   thegreensBG = loadImage("Backgrounds/Goldsmiths_Main_Building.jpg");
   labsBG = loadImage("Backgrounds/labimage.jpg");
   lectureBG = loadImage("Backgrounds/20150309_163721.jpg"); // filler image, need to be replaced
-
+  filterimg = loadImage("Backgrounds/image.jpg");
   thegreensBG.resize(width, height);
   labsBG.resize(width, height);
   lectureBG.resize(width, height);
@@ -80,7 +83,7 @@ void draw()
     menu();
   } else
   {
-    restrictwindow();
+    // restrictwindow();
     effects();
     if (shake)
     {
@@ -109,12 +112,17 @@ void draw()
 
     if (shake)
     {
-      translate(random(2), random(2));
+      translate(random(4), random(4));
     }
 
     if (processing)
     {
       processingwindow();
+
+      if (showfilters)
+      {
+        filters();
+      }
 
       if (showboids)
       {
@@ -275,3 +283,12 @@ void drawboids()
   }
 }
 
+void filters()
+{
+  image(filterimg, width*0.3, height*0.4);
+  if (keyPressed)
+  {
+    fill(200,0,0,30);
+    rect(width*0.3,height*0.4,width*0.5,height*0.5);
+  }
+}

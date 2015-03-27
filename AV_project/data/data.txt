@@ -32,8 +32,11 @@ sounds… interesting.
 let me just open up processing
 OPENPROCESSING
 cool. what sort of filter should i make?
+FILTERSON
+press the number keys on your keyboard to change the type of filter.
 if we ever add options in our game they would go here.
 …
+FILTERSOFF
 fun stuff, now to work on flocking
 …
 STARTBOIDS
