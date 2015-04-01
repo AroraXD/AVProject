@@ -1,4 +1,4 @@
-
+﻿
 BG_GREENS
 BGmusicStart
 Heya i’m Sapphire. Click your mouse or press the spacebar to advance the text.
@@ -15,7 +15,7 @@ RINGTONESTART
 RINGTONESTOP
 STOPSHAKE
 whoops, that was my phone
-looks like I’m late for my lab.
+Looks like I’m late for my lab.
 …
 BGmusicStop
 BG_LABS
@@ -23,36 +23,36 @@ BGlabsStart
 LabSoundStart
 
 …
-looks like i made it just in time.
-let me just log onto the intranet to sign the register. 
+Looks like i made it just in time.
+Let me just log onto the intranet to sign the register. 
 cool, all done.
-now lets see what we have to do today
-looks like we have to make our own filters
+Now lets see what we have to do today
+Looks like we have to make our own filters
 sounds… interesting. 
-let me just open up processing
+Let me just open up processing
 OPENPROCESSING
-cool. what sort of filter should i make?
+Cool. what sort of filter should i make?
 FILTERSON
-press the number keys on your keyboard to change the type of filter.
-if we ever add options in our game they would go here.
+Press the number keys on your keyboard to change the type of filter.
+If we ever add options in our game they would go here.
 …
 FILTERSOFF
-fun stuff, now to work on flocking
+Fun stuff, now to work on flocking
 …
 STARTBOIDS
-that should do it
-move your mouse over the processing sketch window to make the boids move towards it. 
-well thats flocking done.
+That should do it
+Move your mouse over the processing sketch window to make the boids move towards it. 
+Well thats flocking done.
 STOPBOIDS
-more processing stuff will go here.
+More processing stuff will go here.
 …
 CLOSEPROCESSING
-well that was fun. 
-but wait theres more
-time for a lecture
+Well that was fun. 
+But wait theres more
+Time for a lecture
 LabSoundStop
 woo
-we have a really neat lecturer. I can’t wait for you to meet him.
+We have a really neat lecturer. I can’t wait for you to meet him.
 BGlabsStop
 BG_LECTURE
 BGmusicStart
