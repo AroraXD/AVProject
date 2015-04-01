@@ -1,3 +1,7 @@
+//Audio Visual Coursework 2
+//by Jacky Wang && Yuvesh Tulsiani
+//github: https://github.com/uveavanto/AVProject
+
 Maxim maxim; 
 AudioPlayer backgroundmusic; 
 AudioPlayer ringtone; 
@@ -83,7 +87,8 @@ void draw()
     menu();
   } else
   {
-    // restrictwindow();
+    background(0); //not normally seen. this is for when the player resizes the window.
+    // restrictwindow(); //temporrally removed as it was casuing the game to crash if players made the window too small.
     effects();
     if (shake)
     {
@@ -288,7 +293,8 @@ void filters()
   image(filterimg, width*0.3, height*0.4);
   if (keyPressed)
   {
-    fill(200,0,0,30);
-    rect(width*0.3,height*0.4,width*0.5,height*0.5);
+    fill(200, 0, 0, 30);
+    rect(width*0.3, height*0.4, width*0.5, height*0.5);
   }
 }
+
