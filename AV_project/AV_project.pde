@@ -15,6 +15,7 @@ boolean shake;
 character character1;
 
 String text = "text goes here";
+String username ="";
 
 int index = 0;//controls which line of text the game reads.
 
@@ -29,6 +30,7 @@ boolean play = false;
 boolean processing = false;
 boolean showfilters = false;
 boolean showboids = false;
+boolean insertname = false;
 
 
 Boid allBoids[]; //creates an array to store the boids
@@ -78,6 +80,8 @@ void setup()
   textFont(font1);
 
   allBoids = new Boid[20];// fills the allboids array with boids
+
+  frame.setTitle("Audio Visual Adventures - Jacky & Yuvesh"); //sets the name of the game window
 }
 
 void draw()
@@ -120,6 +124,11 @@ void draw()
       translate(random(4), random(4));
     }
 
+    if (insertname)
+    {
+      textinput();
+    }
+
     if (processing)
     {
       processingwindow();
@@ -153,24 +162,47 @@ void menu()
 {
   background(#D3CA0B);
 
-  fill(255, 200);
-  rect(width/2, height*0.5, width*0.3, height*0.1);
-  fill(0);
-  textSize(40); 
-  fill(50, 200);
-  text("PLAY", width/2, height*0.5);
   fill(50, 200);
   text("Audio Visual Adventures", width/2, height*0.1);
 
+  if ( button("PLAY", height*0.5))
+    play = true;
+}
+
+boolean button(String buttontext, float buttonheight)
+{
+  boolean x = false;
+  fill(255, 200);
+  rect(width/2, buttonheight, width*0.3, height*0.1);
+  fill(0);
+  textSize(40); 
+  fill(50, 200);
+  text(buttontext, width/2, buttonheight);
+
   if (mouseX >width*0.5-width*0.15 && mouseX < width*0.5+width*0.15)
   {
-    if (mouseY >height*0.5-height*0.05 && mouseY < height*0.5+height*0.05)
+    if (mouseY >buttonheight-height*0.05 && mouseY < buttonheight+height*0.05)
     {
       if (mousePressed)
-        play = true;
+      {
+        x = true;
+        return x;
+      }
     }
   }
+  return x;
 }
+
+void textinput()
+{
+  textSize(height/20);
+  fill(255, 100);
+  rect(width/2, height*0.45, width*0.4, height/5);
+  fill(0);
+  text("What is your name?", width/2, height*0.4);
+  text(username, width/2, height/2);
+}
+
 void textbox()
 {
   noStroke();
@@ -232,16 +264,26 @@ void keyPressed()
 
   if (play)
   {
-    if (key == ' ')
+    if (key == ' ' && insertname == false)
     {
       updatetext();
     }
+  }
+  if (insertname)
+  {
+    if (key == '\n')
+    updatetext();
+    else
+    if(keyCode == BACKSPACE)
+    username = "";
+    else
+    username = username + key;
   }
 }
 
 void mouseClicked()
 {
-  if (play)
+  if (play && insertname == false)
   {
     updatetext();
   }

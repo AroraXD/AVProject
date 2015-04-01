@@ -6,9 +6,15 @@ Good Job. you’ve got the hang of this already.
 If you want to go back and read previous text, close and restart the program. Or finish the game and press “PLAY”again in the menu.
 Also you can resize the window of this program to fit your computer screen better. Try it now.
 So about me…
-Im a first year computing student. 
-stuff
-and more stuff
+Im a first year computing student. Studying here at Goldsmiths University London.
+It's a pretty neat place. I made some friends, joined some societies...
+but enough about me.
+Whats your name?
+TEXTINPUTSTART
+Use your keyboard to type in your name. Press backspace to clear it. Press enter when your done.
+TEXTINPUTSTOP
+PLAYERNAME
+Thas a cool name.
 SHAKE
 RINGTONESTART
 *beep beep tuturuu*
@@ -58,6 +64,14 @@ BG_LECTURE
 BGmusicStart
 lecture hall stuff, background, music etc
 lecture stuff - idk we could put in lecture slides or something.
+O M G like no one is here.
+I cant belive everyone is ditching this lecture.
+Maybe it was cancelled and i just forgort to check my email.
+Let me get out my timetable and check.
+Possibly show timetable on screen here.
+...
+It looks like its supossed to be on.
+
 BGmusicStop
 end of day - societies?
 …

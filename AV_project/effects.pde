@@ -11,7 +11,7 @@ void effects()
     backgroundmusic.stop();
     updatetext();
   }
-    if (text.equals("BGlabsStart") == true)
+  if (text.equals("BGlabsStart") == true)
   {
     labmusic.play();
     updatetext();
@@ -21,7 +21,7 @@ void effects()
     labmusic.stop();
     updatetext();
   }
-    if (text.equals("LabSoundStart") == true)
+  if (text.equals("LabSoundStart") == true)
   {
     labsounds.play();
     updatetext();
@@ -100,4 +100,20 @@ void effects()
     backgroundmusic.volume(1);
     updatetext();
   }
+  if (text.equals("TEXTINPUTSTART") == true)
+  {
+    insertname = true;
+    updatetext();
+  }
+  if (text.equals("TEXTINPUTSTOP") == true)
+  {
+    insertname = false;
+    updatetext();
+  }
+
+  if (text.equals("PLAYERNAME") == true)
+  {
+    text = username;
+  }
 }
+
