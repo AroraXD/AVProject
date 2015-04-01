@@ -14,7 +14,7 @@ TEXTINPUTSTART
 Use your keyboard to type in your name. Press backspace to clear it. Press enter when your done.
 TEXTINPUTSTOP
 PLAYERNAME
-Thas a cool name.
+Thats a cool name.
 SHAKE
 RINGTONESTART
 *beep beep tuturuu*

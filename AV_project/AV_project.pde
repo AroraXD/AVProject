@@ -31,13 +31,14 @@ boolean processing = false;
 boolean showfilters = false;
 boolean showboids = false;
 boolean insertname = false;
+boolean paused =false;
 
 
 Boid allBoids[]; //creates an array to store the boids
 
 void setup()
 {
-  size(900, 600, P3D);
+  size(900, 600, P3D);//p3d needed for the boids to work properly
   rectMode(CENTER);
   imageMode(CENTER);
   textureMode(NORMAL);
@@ -91,71 +92,76 @@ void draw()
     menu();
   } else
   {
-    background(0); //not normally seen. this is for when the player resizes the window.
-    // restrictwindow(); //temporrally removed as it was casuing the game to crash if players made the window too small.
-    effects();
-    if (shake)
+    if (paused)
     {
-      translate(random(5), random(5));
-    }
-    noStroke();
-    beginShape();
-    texture(currentbackground);
-    vertex(v1.x, v1.y, 0, 0);
-    vertex(v2.x, v2.y, 1, 0);
-    vertex(v3.x, v3.y, 1, 1);
-    vertex(v4.x, v4.y, 0, 1);
-    endShape(CLOSE);
-
-    if (shake)
+      pausescreen();
+    } else
     {
-      translate(random(5), random(5));
-    }
-
-    pushMatrix();
-
-    // image(elsa, width*0.8, height - elsa.height/2);
-    character1.update();
-
-    popMatrix();
-
-    if (shake)
-    {
-      translate(random(4), random(4));
-    }
-
-    if (insertname)
-    {
-      textinput();
-    }
-
-    if (processing)
-    {
-      processingwindow();
-
-      if (showfilters)
+      background(0); //not normally seen. this is for when the player resizes the window.
+      // restrictwindow(); //temporrally removed as it was casuing the game to crash if players made the window too small.
+      effects();
+      if (shake)
       {
-        filters();
+        translate(random(5), random(5));
+      }
+      v1.x = 0;
+      v1.y = 0;
+      v2.x = width;
+      v2.y = 0;
+      v3.x = width;
+      v3.y = height;
+      v4.x = 0;
+      v4.y = height;
+      noStroke();
+      beginShape();
+      texture(currentbackground);
+      vertex(v1.x, v1.y, 0, 0);
+      vertex(v2.x, v2.y, 1, 0);
+      vertex(v3.x, v3.y, 1, 1);
+      vertex(v4.x, v4.y, 0, 1);
+      endShape(CLOSE);
+
+      if (shake)
+      {
+        translate(random(5), random(5));
       }
 
-      if (showboids)
+      pushMatrix();
+
+      // image(elsa, width*0.8, height - elsa.height/2);
+      character1.update();
+
+      popMatrix();
+
+      if (shake)
       {
-        drawboids();
+        translate(random(4), random(4));
       }
+
+      if (insertname)
+      {
+        textinput();
+      }
+
+      if (processing)
+      {
+        processingwindow();
+
+        if (showfilters)
+        {
+          filters();
+        }
+
+        if (showboids)
+        {
+          drawboids();
+        }
+      }
+
+
+      textbox();
     }
-
-
-    textbox();
   }
-
-  v1.x = 0;
-  v1.y = 0;
-  v2.x = width;
-  v2.y = 0;
-  v3.x = width;
-  v3.y = height;
-  v4.x = 0;
-  v4.y = height;
 }
 
 void menu()
@@ -196,11 +202,13 @@ boolean button(String buttontext, float buttonheight)
 void textinput()
 {
   textSize(height/20);
-  fill(255, 100);
+  fill(255, 200);
   rect(width/2, height*0.45, width*0.4, height/5);
   fill(0);
   text("What is your name?", width/2, height*0.4);
   text(username, width/2, height/2);
+  //text is edited in the void keyPressed funtion. if added in this function it detect each key per frame and trigger them multipul times making it very difficult to type
+  //textinput concept taken from http://www.learningprocessing.com/examples/chapter-18/example-18-1/
 }
 
 void textbox()
@@ -259,10 +267,10 @@ class character
 void keyPressed()
 {
   //if s key is pressed shake function will turn on/off
-  if (key == 's')
-    shake = !shake;
+  if (key == 'p' && !insertname)
+    paused = !paused;
 
-  if (play)
+  if (play && !paused)
   {
     if (key == ' ' && insertname == false)
     {
@@ -272,18 +280,18 @@ void keyPressed()
   if (insertname)
   {
     if (key == '\n')
-    updatetext();
+      updatetext();
     else
-    if(keyCode == BACKSPACE)
-    username = "";
+      if (keyCode == BACKSPACE)
+      username = "";
     else
-    username = username + key;
+      username = username + key;
   }
 }
 
 void mouseClicked()
 {
-  if (play && insertname == false)
+  if (play && !insertname && !paused)
   {
     updatetext();
   }
@@ -338,5 +346,12 @@ void filters()
     fill(200, 0, 0, 30);
     rect(width*0.3, height*0.4, width*0.5, height*0.5);
   }
+}
+
+void pausescreen()
+{
+  fill(255);
+  textSize(height*0.1);
+  text("PAUSED",width/2,height*0.1);
 }
 
