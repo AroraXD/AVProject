@@ -13,11 +13,19 @@ PFont font1;
 boolean shake;
 
 character character1;
+character character2;
+
+boolean showcharacter1 = false;
+boolean showcharacter2 = false;
+
+color textcol = color(255);
 
 String text = "text goes here";
 String username ="";
 
 int index = 0;//controls which line of text the game reads.
+
+int pausestate =0; //sets which part of the pause menu the player is veiwing
 
 PImage currentbackground;
 PImage thegreensBG;
@@ -39,6 +47,7 @@ Boid allBoids[]; //creates an array to store the boids
 void setup()
 {
   size(900, 600, P3D);//p3d needed for the boids to work properly
+
   rectMode(CENTER);
   imageMode(CENTER);
   textureMode(NORMAL);
@@ -54,7 +63,9 @@ void setup()
 
   font1 = loadFont("Fonts/Playtime.vlw");
 
-  character1 = new character("Sapphire");
+  character1 = new character("Sapphire", "LEFT");
+  character2 = new character("Brock", "RIGHT");
+
 
   thegreensBG = loadImage("Backgrounds/Goldsmiths_Main_Building.jpg");
   labsBG = loadImage("Backgrounds/labimage.jpg");
@@ -104,22 +115,8 @@ void draw()
       {
         translate(random(5), random(5));
       }
-      v1.x = 0;
-      v1.y = 0;
-      v2.x = width;
-      v2.y = 0;
-      v3.x = width;
-      v3.y = height;
-      v4.x = 0;
-      v4.y = height;
-      noStroke();
-      beginShape();
-      texture(currentbackground);
-      vertex(v1.x, v1.y, 0, 0);
-      vertex(v2.x, v2.y, 1, 0);
-      vertex(v3.x, v3.y, 1, 1);
-      vertex(v4.x, v4.y, 0, 1);
-      endShape(CLOSE);
+
+      drawbackground();
 
       if (shake)
       {
@@ -128,8 +125,11 @@ void draw()
 
       pushMatrix();
 
-      // image(elsa, width*0.8, height - elsa.height/2);
-      character1.update();
+      if (showcharacter1)
+        character1.update();
+
+      if (showcharacter2)
+        character2.update();
 
       popMatrix();
 
@@ -166,7 +166,7 @@ void draw()
 
 void menu()
 {
-  background(#D3CA0B);
+  background(#3F5D67);
 
   fill(50, 200);
   text("Audio Visual Adventures", width/2, height*0.1);
@@ -199,6 +199,26 @@ boolean button(String buttontext, float buttonheight)
   return x;
 }
 
+void drawbackground()
+{
+  v1.x = 0;
+  v1.y = 0;
+  v2.x = width;
+  v2.y = 0;
+  v3.x = width;
+  v3.y = height;
+  v4.x = 0;
+  v4.y = height;
+  noStroke();
+  beginShape();
+  texture(currentbackground);
+  vertex(v1.x, v1.y, 0, 0);
+  vertex(v2.x, v2.y, 1, 0);
+  vertex(v3.x, v3.y, 1, 1);
+  vertex(v4.x, v4.y, 0, 1);
+  endShape(CLOSE);
+}
+
 void textinput()
 {
   textSize(height/20);
@@ -221,7 +241,7 @@ void textbox()
   popStyle();
 
   pushStyle();
-  fill(255);
+  fill(textcol);
   textSize((width+height/2)*0.015); 
   text(text, width*0.5, height*0.85, width*0.9, height*02);
   popStyle();
@@ -234,7 +254,7 @@ void textbox()
   }
 }
 
-void restrictwindow()
+void restrictwindow()//is supossed to stop the screen getting smaller than a specified size 
 {
   if (width < 400)
   {
@@ -251,24 +271,33 @@ class character
 {
   String name;
   PImage sprite1;
-  character(String n )
+  float location;
+  String loc;
+  character(String n, String l )
   {
     name = n;
     sprite1 = loadImage("Characters/"+name+".png");
-    sprite1.resize(0, int(height*0.8));
+    loc = l;
   }
 
   void update()
   {
-    image(sprite1, width*0.8, height - sprite1.height/2);
+    sprite1.resize(0, int(height*0.8));
+
+    if (loc == "LEFT")
+      location = width*0.8;
+    else
+      location = width*0.2;
+
+    image(sprite1, location, height - sprite1.height/2);
   }
 }
 
 void keyPressed()
 {
-  //if s key is pressed shake function will turn on/off
-  if (key == 'p' && !insertname)
-    paused = !paused;
+  if (key == 'p' || key =='P')
+    if (!insertname)
+      paused = !paused;
 
   if (play && !paused)
   {
@@ -279,12 +308,15 @@ void keyPressed()
   }
   if (insertname)
   {
-    if (key == '\n')
+    if (key == '\n')//enter key will save the name and contine the game.
       updatetext();
     else
       if (keyCode == BACKSPACE)
-      username = "";
-    else
+      username ="";
+    else 
+      if (username == "" && key == ' ' || username.length() >12)//used to stop spaces being entered at the start of the name. also used to limit the charcter count
+    {
+    } else
       username = username + key;
   }
 }
@@ -352,6 +384,74 @@ void pausescreen()
 {
   fill(255);
   textSize(height*0.1);
-  text("PAUSED",width/2,height*0.1);
+  text("PAUSED", width/2, height*0.05);
+
+  fill(#4DD1FF, 20);
+  rect(width*0.5, height*0.5, width*0.9, height*0.8);
+  fill(#3CA3C6, 50);
+  rect(width*0.15, height*0.5, width*0.2, height*0.8);
+
+  fill(#4DD1FF, 50); //colors the area behind the text you hover over.
+  if (mouseX >width*0.05 && mouseX < width*0.25 && mouseY < height*0.2 && mouseY > height*0.1)
+  {  
+    rect(width*0.15, height*0.15, width*0.2, height*0.1);
+    if (mousePressed && pausestate != 0)
+    { 
+      pausestate = 0;
+      fill(255);
+      rect(width*0.5, height*0.5, width*0.9, height*0.8);
+    }
+  }
+  if (mouseX >width*0.05 && mouseX < width*0.25 && mouseY < height*0.3 && mouseY > height*0.2)
+  {  
+    rect(width*0.15, height*0.25, width*0.2, height*0.1);
+    if (mousePressed && pausestate != 1)
+    {
+      pausestate = 1;
+      fill(255);
+      rect(width*0.5, height*0.5, width*0.9, height*0.8);
+    }
+  }
+  if (mouseX >width*0.05 && mouseX < width*0.25 && mouseY < height*0.4 && mouseY > height*0.3)
+  {  
+    rect(width*0.15, height*0.35, width*0.2, height*0.1);
+    if (mousePressed && pausestate != 2)
+    {   
+      pausestate = 2;
+      fill(255);
+      rect(width*0.5, height*0.5, width*0.9, height*0.8);
+    }
+  }
+  if (mouseX >width*0.05 && mouseX < width*0.25 && mouseY < height*0.5 && mouseY > height*0.4)
+  {  
+    rect(width*0.15, height*0.45, width*0.2, height*0.1);
+  }
+  if (mouseX >width*0.05 && mouseX < width*0.25 && mouseY < height*0.6 && mouseY > height*0.5)
+  {  
+    rect(width*0.15, height*0.55, width*0.2, height*0.1);
+  }
+  fill(255);
+  textSize((width+height/2)*0.02);
+  text(username, width*0.15, height*0.15);
+  text(character1.name, width*0.15, height*0.25);
+  text(character2.name, width*0.15, height*0.35);
+  text("???", width*0.15, height*0.45);
+  text("???", width*0.15, height*0.55);
+
+  switch(pausestate) {
+  case 0:
+    text(username+ " stats", width*0.5, height*0.15);
+    break;
+  case 1:
+    text(character1.name+" stats", width*0.5, height*0.15);
+    break;
+  case 2:
+    text(character2.name+" stats", width*0.5, height*0.15);
+    break;
+  case 3:
+    break;
+  case 4:
+    break;
+  }
 }
 

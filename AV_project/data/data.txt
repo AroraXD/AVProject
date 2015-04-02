@@ -1,6 +1,8 @@
 ﻿
 BG_GREENS
 BGmusicStart
+SHOWC1
+TEXTWHITE
 Heya i’m Sapphire. Click your mouse or press the spacebar to advance the text.
 Good Job. you’ve got the hang of this already.
 If you want to go back and read previous text, close and restart the program. Or finish the game and press “PLAY”again in the menu.
@@ -9,70 +11,116 @@ So about me…
 Im a first year computing student. Studying here at Goldsmiths University London.
 It's a pretty neat place. I made some friends, joined some societies...
 but enough about me.
+I know nothing about you.
 Whats your name?
 TEXTINPUTSTART
-Use your keyboard to type in your name. Press backspace to clear it. Press enter when your done.
+Use your keyboard to type in your name. Press BACKSPACE to clear it. Press the ENTER or RETURN when your done.
 TEXTINPUTSTOP
 PLAYERNAME
-Thats a cool name.
+That's a cool name.
+oh, I almost forgot. You can press 'P' to pause the game at anytime. I mean, if you can call this a game.
+In the pause menu you can check out your stats, who you've met, see your inventory-
 SHAKE
 RINGTONESTART
 *beep beep tuturuu*
 RINGTONESTOP
 STOPSHAKE
-whoops, that was my phone
-Looks like I’m late for my lab.
+Whoops, that was my phone
+Looks like I’m late for the lab.
 …
 BGmusicStop
 BG_LABS
 BGlabsStart
 LabSoundStart
-
 …
-Looks like i made it just in time.
+Looks like we made it just in time.
 Let me just log onto the intranet to sign the register. 
-cool, all done.
-Now lets see what we have to do today
-Looks like we have to make our own filters
-sounds… interesting. 
-Let me just open up processing
+Cool, all done.
+Now lets see what we have to do today.
+Looks like we have to make our own filters.
+Sounds… interesting. 
+Let me just open up processing.
 OPENPROCESSING
-Cool. what sort of filter should i make?
+Cool. what sort of filter should I make?
 FILTERSON
 Press the number keys on your keyboard to change the type of filter.
-If we ever add options in our game they would go here.
+What do you think pretty cool, eh?
 …
 FILTERSOFF
-Fun stuff, now to work on flocking
+Fun stuff, now to work on that flocking project we were set.
 …
 STARTBOIDS
 That should do it
-Move your mouse over the processing sketch window to make the boids move towards it. 
+Move your mouse over the processing sketch window to make the boids use it as a centerpoint. 
 Well thats flocking done.
 STOPBOIDS
-More processing stuff will go here.
+More processing stuff might go here.
 …
 CLOSEPROCESSING
 Well that was fun. 
-But wait theres more
+But wait there's more
 Time for a lecture
 LabSoundStop
 woo
-We have a really neat lecturer. I can’t wait for you to meet him.
+We have a really neat lecturer. His lectures are what keep me going.
 BGlabsStop
 BG_LECTURE
 BGmusicStart
-lecture hall stuff, background, music etc
-lecture stuff - idk we could put in lecture slides or something.
+...
 O M G like no one is here.
-I cant belive everyone is ditching this lecture.
-Maybe it was cancelled and i just forgort to check my email.
+Are we too early?
+No it looks like we're on time.
+I cant belive no one else is here yet.
+Maybe it was cancelled and I just forgort to check my email.
 Let me get out my timetable and check.
 Possibly show timetable on screen here.
+Errr,These things are so hard to read
 ...
 It looks like its supossed to be on.
+Let me message my friends and see where they are.
+ok, message sent: "wre r u?"
+SHAKE
+RINGTONESTART
+*beep beep tuturuu*
+RINGTONESTOP
+STOPSHAKE
+That was fast. lets see what they replied: "@ GAS"
+Oh, they must have all skipped the lecture to go to the screening at GAS (Goldsmiths Anime Society https://www.facebook.com/groups/goldsmithsanimesociety) today.
+I wonder what they're showing today.
+What nerds, while there watching cartoons I'll be expanding my Audio Visual knowlage.
+We're the real winners.
+...
+aww look, theres the lecturer
+SHOWC2
+[I guess it's too late to leave now.]
+TEXTBLUE
+Hey, where is everyone?
+TEXTWHITE
+um.... they're ill.
+TEXTBLUE
+All 182 of them?!??!!
+TEXTWHITE
+um.. yea... freshers flu?
+TEXTBLUE
+But it's the second term. and I just saw atleast 28 people in the lab.
+Anyhow, nomatter. we'll wait a few minutes for anyone else to arrive then just start. 
+You're Ruby, right?
+TEXTWHITE
+It's Sappire. [Can you belive this guy? He could have just checked the pause menu]
+TEXTBLUE
+Either way your last project was very good. You are showing great progress. Although your report was on the short side.
+and your friend thats ....
+PLAYERNAME
+ofcourse. 
+Your last project was really something. Truely a fine piece of Audio Visual art.
+Well looks like no one else is coming.
+We have the room to ourselfs, lets make the most of it.
+TEXTWHITE
+ooooh, lets sit right at the front then. normally the best spots are taken before we get here.. 
+
+idk more stuff.
 
 BGmusicStop
-end of day - societies?
+end of day
 …
 .:THE END:. Click to return to the menu.

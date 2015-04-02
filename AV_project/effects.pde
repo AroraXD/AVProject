@@ -1,6 +1,36 @@
 
 void effects()
 {
+  if (text.equals("TEXTWHITE") == true)
+  {
+    textcol = color(255);    
+    updatetext();
+  }
+  if (text.equals("TEXTBLUE") == true)
+  {
+    textcol = color(#6AD8FF);    
+    updatetext();
+  }
+  if (text.equals("SHOWC1") == true)
+  {
+    showcharacter1 = true;
+    updatetext();
+  }
+  if (text.equals("HIDEC1") == true)
+  {
+    showcharacter1 = false;
+    updatetext();
+  }
+  if (text.equals("SHOWC2") == true)
+  {
+    showcharacter2 = true;
+    updatetext();
+  }
+  if (text.equals("HIDEC2") == true)
+  {
+    showcharacter2 = false;
+    updatetext();
+  }
   if (text.equals("BGmusicStart") == true)
   {
     backgroundmusic.play();
