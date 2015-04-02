@@ -80,14 +80,28 @@ void pausescreen()
     fill(255);
     text(username+ "'s stats", width*0.6, height*0.15);
     text("Inventory", width*0.6, height*0.63);
-
+    String pstats[] = loadStrings("Characters/player_stats.txt");
+    for (int i =0; i < pstats.length; i++)
+    {
+      text(pstats[i], width*0.6, height*0.25+(height*i*0.07));
+    }
 
     break;
   case 1:
     text(character1.name+"'s stats", width*0.6, height*0.15);
+    String c1stats[] = loadStrings("Characters/"+character1.name+"_stats.txt");
+    for (int i =0; i < c1stats.length; i++)
+    {
+      text(c1stats[i], width*0.6, height*0.25+(height*i*0.07));
+    }
     break;
   case 2:
     text(character2.name+"'s stats", width*0.6, height*0.15);
+    String c2stats[] = loadStrings("Characters/"+character2.name+"_stats.txt");
+    for (int i =0; i < c2stats.length; i++)
+    {
+      text(c2stats[i], width*0.6, height*0.25+(height*i*0.07));
+    }
     break;
   case 3:
     break;

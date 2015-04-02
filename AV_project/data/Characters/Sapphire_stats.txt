@@ -1,0 +1,9 @@
+Health: 70
+Stamina: 50
+Speed: 40
+Strength: 20
+Audio Visual: 45
+Birthday - 12th July
+Fav. Colour - Teal
+Facebook Friends - 347
+Hobby - Tennis

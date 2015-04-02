@@ -1,0 +1,5 @@
+Health: 100
+Stamina: 40
+Speed: 30
+Strength: 45
+Audio Visual: 70

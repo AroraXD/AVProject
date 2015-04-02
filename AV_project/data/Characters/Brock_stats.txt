@@ -1,0 +1,9 @@
+Health: 100
+Stamina: 100
+Speed: 100
+Strength: 100
+Audio Visual: 100
+Birthday - ???
+Fav. Colour - #BADA55
+Fav. Shampoo Brand - Loreal
+Hobby - Programing
