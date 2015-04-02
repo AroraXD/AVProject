@@ -21,7 +21,7 @@ boolean showcharacter2 = false;
 color textcol = color(255);
 
 String text = "text goes here";
-String username ="";
+String username ="Player";
 
 int index = 0;//controls which line of text the game reads.
 
@@ -273,6 +273,7 @@ class character
   PImage sprite1;
   float location;
   String loc;
+  boolean unlocked;
   character(String n, String l )
   {
     name = n;
@@ -282,6 +283,9 @@ class character
 
   void update()
   {
+    if(!unlocked)//as soon as the update funtion is called the character has been seen by the player and its stats are visable in the pause menu.
+    unlocked = true;
+    
     sprite1.resize(0, int(height*0.8));
 
     if (loc == "LEFT")
@@ -415,7 +419,7 @@ void pausescreen()
   if (mouseX >width*0.05 && mouseX < width*0.25 && mouseY < height*0.4 && mouseY > height*0.3)
   {  
     rect(width*0.15, height*0.35, width*0.2, height*0.1);
-    if (mousePressed && pausestate != 2)
+    if (mousePressed && pausestate != 2 && character2.unlocked)
     {   
       pausestate = 2;
       fill(255);
@@ -434,19 +438,25 @@ void pausescreen()
   textSize((width+height/2)*0.02);
   text(username, width*0.15, height*0.15);
   text(character1.name, width*0.15, height*0.25);
+  
+  if(character2.unlocked)
   text(character2.name, width*0.15, height*0.35);
+  else
+  text("???", width*0.15, height*0.35);
+
+  
   text("???", width*0.15, height*0.45);
   text("???", width*0.15, height*0.55);
 
   switch(pausestate) {
   case 0:
-    text(username+ " stats", width*0.5, height*0.15);
+    text(username+ "'s stats", width*0.5, height*0.15);
     break;
   case 1:
-    text(character1.name+" stats", width*0.5, height*0.15);
+    text(character1.name+"'s stats", width*0.5, height*0.15);
     break;
   case 2:
-    text(character2.name+" stats", width*0.5, height*0.15);
+    text(character2.name+"'s stats", width*0.5, height*0.15);
     break;
   case 3:
     break;
