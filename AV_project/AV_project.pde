@@ -24,7 +24,7 @@ String text = "text goes here";
 String username ="Player";
 
 int index = 0;//controls which line of text the game reads.
-
+int loadtextfrom = 0; //used to pick which text file the game reads from.
 int pausestate = 0; //sets which part of the pause menu the player is veiwing
 
 PImage currentbackground;
@@ -157,8 +157,6 @@ void draw()
           drawboids();
         }
       }
-
-
       textbox();
     }
   }
@@ -168,11 +166,23 @@ void menu()
 {
   background(#3CA3C6);
 
+  textSize(height*0.1);
   fill(50, 200);
   text("Audio Visual Adventures", width/2, height*0.1);
 
-  if ( button("PLAY", height*0.5))
+  if ( button("DAY 1", height*0.4))
+  {
     play = true;
+    loadtextfrom = 1;
+  }
+  if ( button("DAY 2", height*0.6))
+  { 
+    play = true;
+    loadtextfrom = 2;
+  }
+  if ( button("REPORT", height*0.8))
+  {
+  }
 }
 
 boolean button(String buttontext, float buttonheight)
@@ -181,7 +191,7 @@ boolean button(String buttontext, float buttonheight)
   fill(255, 200);
   rect(width/2, buttonheight, width*0.3, height*0.1);
   fill(0);
-  textSize(40); 
+  textSize(height*0.06); 
   fill(50, 200);
   text(buttontext, width/2, buttonheight);
 
@@ -236,7 +246,7 @@ void textbox()
   noStroke();
 
   pushStyle();
-  fill(0, 100);
+  fill(0, 150);
   rect(width*0.5, height*0.85, width*0.9, height*0.2);
   popStyle();
 
@@ -324,15 +334,28 @@ void processingwindow()
 void updatetext()
 {
   index++;
-  String lines[] = loadStrings("data.txt");
-
-  if (index >= lines.length )
+  String lines[];
+  switch(loadtextfrom)
   {
-    index=0;
-    play = false;
+  case 1:
+    String lines1[] = loadStrings("Day_1.txt");
+    if (index >= lines1.length )
+    {
+      index=0;
+      play = false;
+    }
+    text = lines1[index];
+    break;
+  case 2:
+    String lines2[] = loadStrings("http://igor.gold.ac.uk/~ytuls045/AV/Day_2.txt");
+    if (index >= lines2.length )
+    {
+      index=0;
+      play = false;
+    }
+    text = lines2[index];
+    break;
   }
-
-  text = lines[index];
 }
 
 void drawboids()

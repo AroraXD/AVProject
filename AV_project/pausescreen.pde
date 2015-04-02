@@ -85,7 +85,6 @@ void pausescreen()
     {
       text(pstats[i], width*0.6, height*0.25+(height*i*0.07));
     }
-
     break;
   case 1:
     text(character1.name+"'s stats", width*0.6, height*0.15);
