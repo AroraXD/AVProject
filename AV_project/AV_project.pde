@@ -25,7 +25,7 @@ String username ="Player";
 
 int index = 0;//controls which line of text the game reads.
 
-int pausestate =0; //sets which part of the pause menu the player is veiwing
+int pausestate = 0; //sets which part of the pause menu the player is veiwing
 
 PImage currentbackground;
 PImage thegreensBG;
@@ -166,7 +166,7 @@ void draw()
 
 void menu()
 {
-  background(#3F5D67);
+  background(#3CA3C6);
 
   fill(50, 200);
   text("Audio Visual Adventures", width/2, height*0.1);
@@ -267,41 +267,14 @@ void restrictwindow()//is supossed to stop the screen getting smaller than a spe
   }
 }
 
-class character
-{
-  String name;
-  PImage sprite1;
-  float location;
-  String loc;
-  boolean unlocked;
-  character(String n, String l )
-  {
-    name = n;
-    sprite1 = loadImage("Characters/"+name+".png");
-    loc = l;
-  }
-
-  void update()
-  {
-    if (!unlocked)//as soon as the update funtion is called the character has been seen by the player and its stats are visable in the pause menu.
-      unlocked = true;
-
-    sprite1.resize(0, int(height*0.8));
-
-    if (loc == "LEFT")
-      location = width*0.8;
-    else
-      location = width*0.2;
-
-    image(sprite1, location, height - sprite1.height/2);
-  }
-}
-
 void keyPressed()
 {
   if (key == 'p' || key =='P')
     if (!insertname)
+    {
       paused = !paused;
+      pausestate = 0;//sets it so when the player views there own stats on the pause screen when they open it
+    }
 
   if (play && !paused)
   {
@@ -383,3 +356,4 @@ void filters()
     rect(width*0.3, height*0.4, width*0.5, height*0.5);
   }
 }
+

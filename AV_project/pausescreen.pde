@@ -6,7 +6,7 @@ void pausescreen()
 
   fill(#4DD1FF, 20);
   rect(width*0.5, height*0.5, width*0.9, height*0.8);
-  fill(#3CA3C6, 50);
+  fill(#3CA3C6, 200);
   rect(width*0.15, height*0.5, width*0.2, height*0.8);
 
   fill(#4DD1FF, 50); //colors the area behind the text you hover over.
@@ -16,7 +16,7 @@ void pausescreen()
     if (mousePressed && pausestate != 0)
     { 
       pausestate = 0;
-      fill(255);
+      fill(#3CA3C6);
       rect(width*0.5, height*0.5, width*0.9, height*0.8);
     }
   }
@@ -26,7 +26,7 @@ void pausescreen()
     if (mousePressed && pausestate != 1)
     {
       pausestate = 1;
-      fill(255);
+      fill(#3CA3C6);
       rect(width*0.5, height*0.5, width*0.9, height*0.8);
     }
   }
@@ -36,7 +36,7 @@ void pausescreen()
     if (mousePressed && pausestate != 2 && character2.unlocked)
     {   
       pausestate = 2;
-      fill(255);
+      fill(#3CA3C6);
       rect(width*0.5, height*0.5, width*0.9, height*0.8);
     }
   }
