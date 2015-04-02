@@ -375,8 +375,16 @@ void filters()
   image(filterimg, width*0.3, height*0.4);
   if (keyPressed)
   {
-    fill(200, 0, 0, 30);
-    rect(width*0.3, height*0.4, width*0.5, height*0.5);
+    if (key == '1')
+    {
+      fill(200, 0, 0, 30);
+      rect(width*0.3, height*0.4, width*0.5, height*0.5);
+    }
+    if (key == '2')
+    {
+      fill(200, 200, 200, 20);
+      rect(width*0.3, height*0.4, width*0.5, height*0.5);
+    }
   }
 }
 
