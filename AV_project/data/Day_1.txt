@@ -44,7 +44,7 @@ OPENPROCESSING
 Cool. what sort of filter should I make?
 FILTERSON
 Press the number keys on your keyboard to change the type of filter.
-What do you think pretty cool, eh?
+What do you think, pretty cool, eh?
 …
 FILTERSOFF
 Fun stuff, now to work on that flocking project we were set.

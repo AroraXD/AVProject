@@ -1,4 +1,5 @@
-void pausescreen()
+//pausescreen function
+void pausescreen() 
 {
   fill(255);
   textSize(height*0.1);
@@ -65,6 +66,7 @@ void pausescreen()
   text("???", width*0.15, height*0.45);
   text("???", width*0.15, height*0.55);
 
+  //we use a switch function for calling what infomation is displayed on the screen. the infomation is stored in txt files.
   switch(pausestate) {
   case 0:
     fill(255, 15);
