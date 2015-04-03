@@ -1,4 +1,4 @@
-
+//for an breif explianation of what each of these do please see the Refrence.txt file
 void effects()
 {
   if (text.equals("TEXTWHITE"))

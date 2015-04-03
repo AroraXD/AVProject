@@ -1,0 +1,85 @@
+When making a text file to be read by our program you can use the following commands as sepeatre lines.
+
+TEXTWHITE
+changes the colour of the text displayed to white.
+
+TEXTBLUE
+changes the colour of the text displayed to a light blue. 
+
+PLAYERNAME
+this line is read as the name the player has inputed. If the player has not inputed a name yet the defualt name is "Player".
+
+SHOWC1
+displays character1 on the screen.
+
+HIDEC1
+removes character1 from the screen.
+
+SHOWC2
+displays character2 on the screen.
+
+HIDEC2
+removes character2 from the screen.
+
+BGmusicStart
+Starts playing the defualt background music.
+
+BGmusicStop
+Stops playing the default background music.
+
+BGlabsStart
+Starts playing the labs background music.
+
+BGlabsStop
+Stops playing the labs background music.
+
+LabSoundStart
+Starts playing the labs ambient sound effect.
+
+LabSoundStop
+Stops playing the labs ambient sound effect.
+
+BG_GREENS
+Changes the background to a picture of the greens.
+
+BG_LABS
+Changes the background to a picture of the labs.
+
+BG_LECTURE
+Changes the background to a picture of the lecture hall.
+
+SHAKE
+Starts the shake command. causes the background,characters and text box to shake.
+
+STOPSHAKE
+Stops the shake command.
+
+OPENPROCESSING
+Opens a processing window on the left side of the screen. It does nothing without the FILTERSON or STARTBOID commands.  
+
+CLOSEPROCESSING
+Removes the processing window from the screen. This will also disable any filters or boids on the screen.  
+
+FILTERSON
+Puts an image on the processing window. when the number buttons are held down a filter is placed ontop of it. 
+
+FILTERSOFF
+Removes the filter function from the in game processing window.
+
+STARTBOIDS
+Places boids randomly inside the processing window. With a defualt centre point of NULL. If the mouse is moved into the processing window its location will become the new centerpoint.
+
+STOPBOIDS
+Removes the boids from the in game processing window. 
+
+RINGTONESTART
+Plays the ringtone sound effect.
+
+RINGTONESTOP
+Stops the playback of the ringtone sound effect.
+
+TEXTINPUTSTART
+Opens up a small textbox where the player can edit there in game name using the keyboard.
+
+TEXTINPUTSTOP
+Closes the textbox.
