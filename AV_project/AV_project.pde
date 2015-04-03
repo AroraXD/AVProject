@@ -82,7 +82,7 @@ void setup()
   backgroundmusic = maxim.loadFile("Audio/justyce22-70-bpm-ethnic-victory.wav"); //music from http://www.looperman.com/loops/detail/82039
   ringtone = maxim.loadFile("Audio/New Tuturu.wav"); //sound effect from https://youtu.be/nuLeIpTGui0
   labmusic = maxim.loadFile("Audio/maxjc-sparkling-keys-loop.wav"); //sound effect http://www.looperman.com/loops/detail/46566
-  labsounds = maxim.loadFile("Audio/labsoundsfaded.wav"); //sound effect recodeded in room 306
+  labsounds = maxim.loadFile("Audio/labsoundsfaded.wav"); //sound effect recodeded using a smartphone in room 306 during a AV lab
   labsounds.volume(0.6);
   v1 = new PVector(0, 0);
   v2 = new PVector(width, 0);
@@ -182,6 +182,7 @@ void menu()
   }
   if ( button("REPORT", height*0.8))
   {
+    link("https://docs.google.com/document/d/1ifSaP82deqNTF_FHbHYPqJdykq9_STVKM4onr3VIlno/edit?usp=sharing", "_new"); 
   }
 }
 
