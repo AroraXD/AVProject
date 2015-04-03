@@ -3,8 +3,8 @@ BG_GREENS
 BGmusicStart
 SHOWC1
 TEXTWHITE
-Heya i’m Sapphire. Click your mouse or press the spacebar to advance the text.
-Good Job. you’ve got the hang of this already.
+Heya I’m Sapphire. Click your mouse or press the spacebar to advance the text.
+Good Job. You’ve got the hang of this already.
 If you want to go back and read previous text, close and restart the program. Or finish the game and press “PLAY”again in the menu.
 Also you can resize the window of this program to fit your computer screen better. Try it now.
 So about me…
@@ -73,7 +73,6 @@ No it looks like we're on time.
 I cant belive no one else is here yet.
 Maybe it was cancelled and I just forgort to check my email.
 Let me get out my timetable and check.
-Possibly show timetable on screen here.
 Errr,These things are so hard to read
 ...
 It looks like its supossed to be on.
@@ -90,7 +89,7 @@ I wonder what they're watching.
 What nerds, while there watching cartoons I'll be expanding my Audio Visual knowlage.
 We're the real winners.
 ...
-aww look, theres the lecturer
+aww look, there's the lecturer
 SHOWC2
 [I guess it's too late to leave now.]
 TEXTBLUE
@@ -116,11 +115,26 @@ Your last project was really something. Truely a fine piece of Audio Visual art.
 Well looks like no one else is coming.
 We have the room to ourselfs, lets make the most of it.
 TEXTWHITE
-ooooh, lets sit right at the front then. Normally the best spots are taken before we get here.. 
-
-idk more stuff.
-
+ooooh, lets sit right at the front then. Normally the best spots are taken before we get here.
+HIDEC1
+TEXTBLUE
+So today we'll be covering COMPUTER VISION, LIGHTS, AND CAMERAS...
+...
+...SPOTLIGHTS, POINT LIGHTS, DIRECTIONAL LIGHTS...
+...
+...DIRECTIONS IN 3D, VECTORS...
+... 
+...And that it for today guys. Have a good week. Hopefully more people will turn up next time.
+SHOWC1
+HIDEC2
+TEXTWHITE
+Well that was confusing.
+I just want to go home now.
+To revise and take in what we just learnt.
+Well cya tommorow. Imma head off now.
+HIDEC1
 BGmusicStop
 end of day
 …
-.:THE END:. Click to return to the menu.
+.:THE END:.
+Click to return to the menu.
